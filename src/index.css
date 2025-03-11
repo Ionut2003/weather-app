@@ -1,13 +1,188 @@
+* {
+    letter-spacing: 0.1em;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: radial-gradient(circle, #3a3a3a, #000000);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+.title {
+    color: #ffcc00;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    color: #55E6FB;
+    margin: 0;
+}
+
+.geolocation-span {
+    color: rgb(226, 226, 226);
+    font-size: 0.7em;
+}
+
+p {
+    color: #b6b6b6;
+    margin: 0;
+}
+
+#weather-section {
+    margin: 20px 10px;
+    gap: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    min-width: 250px;
+    background: linear-gradient(135deg, #1E1A3D, #25203F);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.552);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(85, 230, 251, 0.6);
+    cursor: pointer;
+    
+}
+
+span {
+    color: white;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #00ffaf;
+    font-weight: bold;
+    width: fit-content;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #00C3FF;
+}
+
+.input-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 10px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.get-weather-btn {
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(
+        135deg,
+        #0046c8,
+        #050036,
+        #004ccf
+    );
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(85, 230, 251, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #0046c8,
+        #0e008c,
+        #004ccf
+    );
+    box-shadow: 0 0 15px rgba(85, 230, 251, 0.9);
+    transform: scale(1.05);
+
+}
+
+.forecast-delete-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forecast-delete-container img {
+    filter: invert(24%) sepia(100%) saturate(7483%) hue-rotate(1deg) brightness(101%) contrast(119%);
+    transition: 0.2s ease-in-out;
+}
+
+.forecast-delete-container img:hover {
+    transform: scale(1.15);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
 }
