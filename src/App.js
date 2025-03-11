@@ -4,7 +4,7 @@ import Forecast from "./Forecast"; // Import Weather component
 
 function App() {
     return (
-        <Router>
+        <Router basename="/weather-app">
             <Routes>
                 <Route path="/" element={<Weather />} />
                 <Route path="/forecast/:city" element={<Forecast />} />
