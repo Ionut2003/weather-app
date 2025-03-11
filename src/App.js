@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import {Weather} from "./Weather"; // Import Weather component
 import Forecast from "./Forecast"; // Import Weather component
 
